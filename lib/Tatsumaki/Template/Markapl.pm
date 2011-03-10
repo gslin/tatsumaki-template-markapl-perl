@@ -65,6 +65,7 @@ has 'view_class' => (is => 'rw', lazy_build => 1);
 
 use Plack::Util;
 use Sub::Install;
+use namespace::autoclean;
 
 sub _build_view_class {
     Plack::Util::load_class(shift->view_class_name);
@@ -86,8 +87,6 @@ sub rewrite {
 	as => '_build_template',
     });
 }
-
-use namespace::autoclean;
 
 =head1 AUTHOR
 
