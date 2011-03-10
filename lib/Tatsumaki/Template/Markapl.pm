@@ -6,11 +6,13 @@ use warnings;
 
 =head1 NAME
 
-Tatsumaki::Template::Markapl - Use Markapl as Tatsumaki's template system.
+Tatsumaki::Template::Markapl - Use Markapl as L<Tatsumaki>'s template system.
 
 =head1 DESCRIPTION
 
-This module will use L<Markapl> as Tatsumaki's template system.
+This module will use L<Markapl> as L<Tatsumaki>'s template system.
+
+L<Tatsumaki> do not support custom template engine currently, so we use L<Sub::Install> to rewrite L<Template::Application::_build_template>.
 
 =head1 SYNOPSIS
 
@@ -45,8 +47,9 @@ And then in C<MyProj::View>:
 
 Now you can use it in handler:
 
-    #
+    # MyProj::Handler::Index
     package MyProj::Handler::Index;
+    use parent 'Tatsumaki::Handler';
 
     sub get {
 	shift->render('/', {name => 'perl'});
