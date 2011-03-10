@@ -87,7 +87,7 @@ sub rewrite {
     });
 }
 
-use namespace::clean;
+use namespace::autoclean;
 
 =head1 AUTHOR
 
