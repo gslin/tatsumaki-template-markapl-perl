@@ -1,0 +1,7 @@
+0.2	March 10, 2012
+	- Fix sample code for missing "use parent".
+	- Add more comment in description to explain current way.
+	- Use namespace::clean to cleanup module.
+
+0.1	March 10, 2012
+	- Initial release.
