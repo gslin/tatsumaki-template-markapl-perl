@@ -87,6 +87,8 @@ sub rewrite {
     });
 }
 
+use namespace::clean;
+
 =head1 AUTHOR
 
 Gea-Suan Lin, C<< <gslin at gslin.org> >>
