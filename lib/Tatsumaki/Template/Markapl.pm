@@ -29,20 +29,20 @@ And then in C<MyProj::View>:
     use Markapl;
 
     template '/' => sub {
-	my $self = shift;
+        my $self = shift;
 
-	html {
-	    head {
-		title { 'My Title' };
-	    };
+        html {
+            head {
+                title { 'My Title' };
+            };
 
-	    body {
-		div('#bd') {
-		    outs('Hello, ');
-		    outs($self->get('name'));
-		};
-	    };
-	};
+            body {
+                div('#bd') {
+                    outs('Hello, ');
+                    outs($self->get('name'));
+                };
+            };
+        };
     };
 
 Now you can use it in handler:
@@ -52,7 +52,7 @@ Now you can use it in handler:
     use parent 'Tatsumaki::Handler';
 
     sub get {
-	shift->render('/', {name => 'perl'});
+        shift->render('/', {name => 'perl'});
     };
 
 =cut
@@ -82,9 +82,9 @@ sub rewrite {
     my ($self, $view_class_name) = @_;
 
     Sub::Install::reinstall_sub({
-	code => sub { Tatsumaki::Template::Markapl->new(view_class_name => $view_class_name); },
-	into => 'Tatsumaki::Application',
-	as => '_build_template',
+        code => sub { Tatsumaki::Template::Markapl->new(view_class_name => $view_class_name); },
+        into => 'Tatsumaki::Application',
+        as => '_build_template',
     });
 }
 
